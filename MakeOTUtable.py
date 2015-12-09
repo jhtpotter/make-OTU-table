@@ -5,8 +5,6 @@ import string
 import sys
 import re
 
-print("Hi")
-
 seqPattern = re.compile("^[AGTC*-]+$")
 IDPattern = re.compile("^>(\S+)")
 batList = []
@@ -68,6 +66,7 @@ outFile2 = open(inFileName + ".table_binary.out", "w")
 outFile2.write("MOTU\t" + "\t".join(batList) + "\n")
 outFile3 = open(inFileName + ".sequenceData", "w")
 outFile3.write("MOTU\tSequence\n")
+outFile4 = open(inFileName + ".seqFasta.fasta", "w")
 
 for OTU in OTUList:
     binaryList = [OTU]
@@ -82,6 +81,7 @@ for OTU in OTUList:
     outFile1.write("\t".join(copyNumList) + "\n")
     outFile2.write("\t".join(binaryList) + "\n")
     outFile3.write(OTU + "\t" + seqDict[OTU] + "\n")
+    outFile4.write(">" + OTU + "\n" + seqDict[OTU] + "\n")
 
 
 outFile1.close()
