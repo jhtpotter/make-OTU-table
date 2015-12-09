@@ -5,6 +5,8 @@ import string
 import sys
 import re
 
+print("Hi")
+
 seqPattern = re.compile("^[AGTC*-]+$")
 IDPattern = re.compile("^>(\S+)")
 batList = []
