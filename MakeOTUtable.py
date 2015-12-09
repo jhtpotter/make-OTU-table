@@ -14,7 +14,7 @@ seqDict = {}
 
 del sys.argv[0]
 
-if len(sys.argv != !):
+if len(sys.argv) != 1:
     sys.exit("Please specify a single input file.")
 
 inFileName = sys.argv[0]
